@@ -18,7 +18,7 @@ public class Taxi extends Vehicle
      */
     public Taxi(String base, String id)
     {
-	super(id);
+	    super(id);
         setLocation(base);
         free = true;
     }
@@ -45,4 +45,13 @@ public class Taxi extends Vehicle
         setDestination(null);
         free = true;
     }
+
+    /**
+	* Return the free of the taxi.
+	* @return the free of the taxi.
+	*/
+    public boolean getFree(){
+        return this.free;
+    }
+    
 }

@@ -45,7 +45,7 @@ public class Vehicle{
 	*/
 	public String getStatus()
 	{
-		if(!this.destination.equals(null)){
+		if(this.destination != null){
 			return id + " at " + location + " headed for " + destination;
 		}else{
 			return "The taxi " + id+ " is free, no has destination for taxi.";		

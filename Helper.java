@@ -66,6 +66,16 @@ public class Helper
 		
 		System.out.println("Segundo teste");
 		helper.testArrived();
+
+		//testes adicionados
+		helper.setUp();
+		helper.taxiCo1.showStatus();
+		Vehicle vehicle = (Vehicle) helper.taxiCo1.getVehicleByDestination("Darwin");
+		if(vehicle == null){
+			System.out.println("Não existe vehicle");
+		}else{
+			System.out.println(vehicle.getID());
+		}	
 	}
 }
 
