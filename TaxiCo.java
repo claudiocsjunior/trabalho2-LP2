@@ -129,13 +129,10 @@ public class TaxiCo
      */
     public Vehicle getVehicleByDestination(String destination)
     {
-       // System.out.println("O destino passado foi:" + destination);
         for(Vehicle vehicle : vehicleFleet){
             if(vehicle instanceof Shuttle){
                 if(vehicle.getDestination() != null){
-                    //System.out.println(vehicle.getDestination());
                     if(vehicle.getDestination().equals(destination)){
-                        //System.out.println("Sou onibus");
                         Shuttle shuttle = (Shuttle) vehicle;
                         return shuttle;
                     }
@@ -147,13 +144,11 @@ public class TaxiCo
                 if(vehicle.getDestination() == null){
                     Taxi taxi = (Taxi) vehicle;
                     if(taxi.getFree()){
-                        //System.out.println("Sou Taxi");
                         return taxi;
                     }
                 }
             }
         }
-        //System.out.println("Sou nada");
         return null;
     }
 

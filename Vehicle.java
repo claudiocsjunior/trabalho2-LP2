@@ -48,7 +48,7 @@ public class Vehicle{
 		if(this.destination != null){
 			return id + " at " + location + " headed for " + destination;
 		}else{
-			return "The taxi " + id+ " is free, no has destination for taxi.";		
+			return "The vehicle " + id+ " is free, no has destination for vehicle.";		
 		}
 	
 	}

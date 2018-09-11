@@ -74,9 +74,9 @@ public class TaxiCo
     }
     
     /**
-     * Return the taxi with the given id.
-     * @param id The id of the taxi to be returned.
-     * @return The matching taxi, or null if no match is found.
+     * Return the vehicle with the given id.
+     * @param id The id of the vehicle to be returned.
+     * @return The matching vehiclee, or null if no match is found.
      */
     public Vehicle lookup(String id)
     {
@@ -121,4 +121,40 @@ public class TaxiCo
         destinations.add("Sainsbury's");
         destinations.add("Darwin");
     }
+
+    /**
+     * Return the vehicle with the given destination.
+     * @param destination The destination of the vehicle to be returned.
+     * @return The matching vehiclee, or null if no match is found.
+     */
+    public Vehicle getVehicleByDestination(String destination)
+    {
+       // System.out.println("O destino passado foi:" + destination);
+        for(Vehicle vehicle : vehicleFleet){
+            if(vehicle instanceof Shuttle){
+                if(vehicle.getDestination() != null){
+                    //System.out.println(vehicle.getDestination());
+                    if(vehicle.getDestination().equals(destination)){
+                        //System.out.println("Sou onibus");
+                        Shuttle shuttle = (Shuttle) vehicle;
+                        return shuttle;
+                    }
+                }
+            }
+        }
+        for(Vehicle vehicle : vehicleFleet){
+            if(vehicle instanceof Taxi){
+                if(vehicle.getDestination() == null){
+                    Taxi taxi = (Taxi) vehicle;
+                    if(taxi.getFree()){
+                        //System.out.println("Sou Taxi");
+                        return taxi;
+                    }
+                }
+            }
+        }
+        //System.out.println("Sou nada");
+        return null;
+    }
+
 }

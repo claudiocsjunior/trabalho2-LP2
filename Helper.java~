@@ -73,7 +73,7 @@ public class Helper
 		Vehicle vehicle = (Vehicle) helper.taxiCo1.getVehicleByDestination("Darwin");
 		//caso não seja encontrado nenhum veiculo - Desafio		
 		if(vehicle == null){
-			System.out.println("Não existe vehicle para o destino designado");
+			System.out.println("Não existe vehicle");
 		}else{
 			if(vehicle.getDestination() == null){
 				System.out.println("O taxi " + vehicle.getID() + " está disponível para Você.");				
